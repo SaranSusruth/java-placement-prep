@@ -3,25 +3,23 @@ package Arrays;
 public class SecondLargest {
     public static void main(String[] args) {
 
-        int[] arr = {10, 45, 18, 69, 100, 27, 33};
+        int[] arr = {55, 451, 18, 69, 100, 27, 33};
 
-        int largest = arr[0];
-        int secondLargest = arr[0];
-
-        // Find the largest element
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > largest) {
-                largest = arr[i];
+        int max = arr[0];
+        int smax = arr[0];
+        for (int i = 1; i < arr.length; i++)
+        {
+            if (arr[i]> max)
+            {
+                smax = max;
+                max = arr[i];
+            }
+            else if(arr[i]< max && arr[i] > smax )
+            {
+                smax = arr[i];
             }
         }
-
-        // Find the second largest element
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > secondLargest && arr[i] != largest) {
-                secondLargest = arr[i];
-            }
-        }
-
-        System.out.println("Second largest element is: " + secondLargest);
+        System.out.println(smax);
+    
     }
 }
